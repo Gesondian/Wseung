@@ -1,7 +1,7 @@
 # 低代码平台文档总索引
 
 ## 1. 当前项目阶段
-当前阶段：P0 文档基线已完成，工程已完成 Phase 0/1 初始化、Phase 2 Mock API、Phase 5 前端基础与 hardening、Phase 6 任务中心/审批详情 Mock、Phase 7 发布/文件/审计/安全/诊断 Mock 页面、Phase 8 前置运行态记录详情/新建/编辑/提交审批 Mock 闭环、Phase 9 后端基础设施骨架、Phase 10 数据库接入准备与 Docker/Testcontainers 真实验证、Phase 11 后端 Repository 切换、Phase 12 运行态记录最小后端、Phase 13 运行态提交审批最小后端、Phase 14 流程任务最小后端、Phase 15 前端界面蓝图、Phase 16 设计态核心界面 Mock、Phase 17A 表单拖拽设计器纵切版、Phase 17B 前端 P0 文档驱动对齐、Phase 17C 应用详情与生命周期 Mock、Phase 18 应用中心前端规格梳理、Phase 19 应用中心 P0-AC-001~004 前端设计与 Phase 20 首页实现。当前前端仍为 Mock 验收，后端真实权限、文件、发布快照和完整流程事务尚未完成，不等同于真实后端联调。下一步建议继续小批次设计 `P0-AC-005 ~ P0-AC-006` 分类管理与移动分类，或补 `/apps` 首页自动化测试。
+当前阶段：P0 文档基线已完成，工程已完成 Phase 0/1 初始化、Phase 2 Mock API、Phase 5 前端基础与 hardening、Phase 6 任务中心/审批详情 Mock、Phase 7 发布/文件/审计/安全/诊断 Mock 页面、Phase 8 前置运行态记录详情/新建/编辑/提交审批 Mock 闭环、Phase 9 后端基础设施骨架、Phase 10 数据库接入准备与 Docker/Testcontainers 真实验证、Phase 11 后端 Repository 切换、Phase 12 运行态记录最小后端、Phase 13 运行态提交审批最小后端、Phase 14 流程任务最小后端、Phase 15 前端界面蓝图、Phase 16 设计态核心界面 Mock、Phase 17A 表单拖拽设计器纵切版、Phase 17B 前端 P0 文档驱动对齐、Phase 17C 应用详情与生命周期 Mock、Phase 18 应用中心前端规格梳理、Phase 19 应用中心 P0-AC-001~004 前端设计、Phase 20 首页实现，以及 Phase 21 Git 仓库初始化与 GitHub 首次同步。当前前端仍为 Mock 验收，后端真实权限、文件、发布快照和完整流程事务尚未完成，不等同于真实后端联调。下一步建议继续小批次设计 `P0-AC-005 ~ P0-AC-006` 分类管理与移动分类，或补 `/apps` 首页自动化测试。
 
 ## 2. 文档清单
 
@@ -56,6 +56,7 @@
 | SUM-18 | phase-18-app-center-frontend-spec-summary.md | v1.0 | 2026-05-07 | 已完成 | Phase 18 应用中心前端规格梳理总结 |
 | SUM-19 | phase-19-app-center-001-004-design-summary.md | v1.0 | 2026-05-07 | 已完成 | Phase 19 应用中心 P0-AC-001~004 前端设计总结 |
 | SUM-20 | phase-20-app-center-001-004-frontend-implementation-summary.md | v1.0 | 2026-05-08 | 已完成 | Phase 20 应用中心 P0-AC-001~004 首页实现总结 |
+| SUM-21 | phase-21-git-repository-sync-summary.md | v1.0 | 2026-05-08 | 已完成 | Phase 21 Git 仓库初始化与 GitHub 首次同步总结 |
 
 ## 3. 推荐后续文档
 

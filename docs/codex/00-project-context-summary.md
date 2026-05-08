@@ -20,7 +20,7 @@
 - P0 移动端只做 H5 自适应
 
 ## 5. 当前已完成
-第一批 P0 平台主干需求文档已完成 v1.2。工程侧已完成 Monorepo、前后端骨架、前端 Mock 主闭环、任务/审批/发布/文件/审计/安全/诊断 Mock 页面、前端界面蓝图、设计态核心 Mock 界面、表单拖拽设计器纵切版、前端 P0 文档驱动对齐规则、应用中心首页和应用详情与生命周期 Mock、应用中心 `P0-AC-001 ~ P0-AC-024` 前端设计/测试/验收总规格，以及应用中心 `P0-AC-001 ~ P0-AC-004` 首页前端设计小批次规格；其中 `62-P0-AC-001-004-app-home-frontend-design.md` 已由用户确认，并已按确认范围调整 `/apps` 首页，只保留应用中心浏览、卡片/列表、搜索、筛选和排序能力。后端已完成请求上下文、统一响应/异常、Mock 认证、审计/安全事件、幂等服务、Flyway 基础迁移文件、PostgreSQL `db` profile、Testcontainers 迁移测试、Docker/Testcontainers 真实验证，审计日志、安全事件、幂等服务的内存/JDBC 可配置 Repository，运行态记录最小后端接口与 Repository，运行态提交审批最小后端接口，以及流程任务列表/详情/同意/驳回最小后端接口和流程任务占位 Repository。
+第一批 P0 平台主干需求文档已完成 v1.2。工程侧已完成 Monorepo、前后端骨架、前端 Mock 主闭环、任务/审批/发布/文件/审计/安全/诊断 Mock 页面、前端界面蓝图、设计态核心 Mock 界面、表单拖拽设计器纵切版、前端 P0 文档驱动对齐规则、应用中心首页和应用详情与生命周期 Mock、应用中心 `P0-AC-001 ~ P0-AC-024` 前端设计/测试/验收总规格，以及应用中心 `P0-AC-001 ~ P0-AC-004` 首页前端设计小批次规格；其中 `62-P0-AC-001-004-app-home-frontend-design.md` 已由用户确认，并已按确认范围调整 `/apps` 首页，只保留应用中心浏览、卡片/列表、搜索、筛选和排序能力。工程已初始化 Git 仓库，`main` 分支已首次推送到 GitHub `https://github.com/Gesondian/Wseung.git`。后端已完成请求上下文、统一响应/异常、Mock 认证、审计/安全事件、幂等服务、Flyway 基础迁移文件、PostgreSQL `db` profile、Testcontainers 迁移测试、Docker/Testcontainers 真实验证，审计日志、安全事件、幂等服务的内存/JDBC 可配置 Repository，运行态记录最小后端接口与 Repository，运行态提交审批最小后端接口，以及流程任务列表/详情/同意/驳回最小后端接口和流程任务占位 Repository。
 
 ## 6. 当前下一步
 下一步进入 `P0-AC-005 ~ P0-AC-006` 分类管理小批次设计，或为已实现的 `/apps` 首页补应用中心自动化测试。当前仍不得将 Mock 验收或后端基础设施骨架宣称为真实联调完成；如 Docker/Testcontainers 在受限环境中不可访问 socket，需要使用提升权限。
