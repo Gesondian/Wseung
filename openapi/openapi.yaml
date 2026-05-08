@@ -1,0 +1,270 @@
+openapi: 3.1.0
+info:
+  title: Enterprise Lowcode Platform P0 API
+  version: 0.1.0
+  description: Phase 2 initial OpenAPI contract skeleton. It is not the complete P0 API.
+servers:
+  - url: /api/v1
+paths:
+  /auth/login:
+    post:
+      summary: Login with built-in account password credentials.
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Login result.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginApiResponse"
+  /apps:
+    get:
+      summary: List accessible apps.
+      operationId: listApps
+      responses:
+        "200":
+          description: App summaries.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppSummaryListApiResponse"
+  /apps/{appId}:
+    get:
+      summary: Get app summary.
+      operationId: getApp
+      parameters:
+        - $ref: "#/components/parameters/AppId"
+      responses:
+        "200":
+          description: App summary.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppSummaryApiResponse"
+  /runtime/apps/{appId}/model:
+    get:
+      summary: Get current runtime model through runtime pointer and metadata snapshot.
+      operationId: getRuntimeModel
+      parameters:
+        - $ref: "#/components/parameters/AppId"
+      responses:
+        "200":
+          description: Runtime model.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RuntimeModelApiResponse"
+  /runtime/apps/{appId}/entities/{entityKey}/views/{viewKey}/records:
+    get:
+      summary: List runtime records with field permission trimming.
+      operationId: listRuntimeRecords
+      parameters:
+        - $ref: "#/components/parameters/AppId"
+        - $ref: "#/components/parameters/EntityKey"
+        - $ref: "#/components/parameters/ViewKey"
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: Runtime records.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RuntimeRecordPageApiResponse"
+  /workflow/tasks/todo:
+    get:
+      summary: List todo workflow tasks.
+      operationId: listTodoTasks
+      responses:
+        "200":
+          description: Todo tasks.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkflowTaskListApiResponse"
+components:
+  parameters:
+    AppId:
+      name: appId
+      in: path
+      required: true
+      schema:
+        type: string
+    EntityKey:
+      name: entityKey
+      in: path
+      required: true
+      schema:
+        type: string
+    ViewKey:
+      name: viewKey
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ApiResponse:
+      type: object
+      required: [success, code, message, requestId, traceId]
+      properties:
+        success:
+          type: boolean
+        code:
+          type: string
+        message:
+          type: string
+        data: {}
+        requestId:
+          type: string
+        traceId:
+          type: string
+    LoginRequest:
+      type: object
+      required: [loginIdentifier, password]
+      properties:
+        loginIdentifier:
+          type: string
+        password:
+          type: string
+        rememberMe:
+          type: boolean
+    LoginResponse:
+      type: object
+      required: [accessToken, tokenType, expiresIn, user]
+      properties:
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          enum: [Bearer]
+        expiresIn:
+          type: integer
+        user:
+          type: object
+    AppSummary:
+      type: object
+      required: [appId, appKey, appName, status, defaultEntityKey]
+      properties:
+        appId:
+          type: string
+        appKey:
+          type: string
+        appName:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [published, draft]
+        defaultEntityKey:
+          type: string
+    RuntimeModel:
+      type: object
+      required: [appId, snapshotId]
+      properties:
+        appId:
+          type: string
+        snapshotId:
+          type: string
+        appKey:
+          type: string
+        appName:
+          type: string
+    RuntimeRecord:
+      type: object
+      required: [recordId, appId, entityKey, appVersionId, snapshotId, recordVersion, businessStatus, workflowStatus, data]
+      properties:
+        recordId:
+          type: string
+        appId:
+          type: string
+        entityKey:
+          type: string
+        appVersionId:
+          type: string
+        snapshotId:
+          type: string
+        recordVersion:
+          type: integer
+        businessStatus:
+          type: string
+        workflowStatus:
+          type: string
+        data:
+          type: object
+    WorkflowTask:
+      type: object
+      required: [taskId, appId, recordId, taskName, taskVersion, assigneeName]
+      properties:
+        taskId:
+          type: string
+        appId:
+          type: string
+        recordId:
+          type: string
+        taskName:
+          type: string
+        taskVersion:
+          type: integer
+        assigneeName:
+          type: string
+    LoginApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              $ref: "#/components/schemas/LoginResponse"
+    AppSummaryApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              $ref: "#/components/schemas/AppSummary"
+    AppSummaryListApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: "#/components/schemas/AppSummary"
+    RuntimeModelApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              $ref: "#/components/schemas/RuntimeModel"
+    RuntimeRecordPageApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              type: object
+    WorkflowTaskListApiResponse:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse"
+        - type: object
+          properties:
+            data:
+              type: array
+              items:
+                $ref: "#/components/schemas/WorkflowTask"

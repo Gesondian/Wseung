@@ -1,0 +1,16 @@
+{
+  "name": "@lowcode/runtime-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"TODO(P0-stub): runtime-contracts lint is not configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"TODO(P0-stub): runtime-contracts tests are not configured yet\""
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}

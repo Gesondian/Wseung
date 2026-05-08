@@ -1,0 +1,14 @@
+package com.example.lowcode.common.error;
+
+public enum ErrorCode {
+    BAD_REQUEST,
+    UNAUTHORIZED,
+    PERMISSION_DENIED,
+    RESOURCE_NOT_FOUND,
+    VERSION_CONFLICT,
+    IDEMPOTENCY_CONFLICT,
+    VALIDATION_FAILED,
+    WORKFLOW_TASK_INVALID,
+    FILE_ACCESS_DENIED,
+    INTERNAL_ERROR
+}

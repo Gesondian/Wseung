@@ -1,0 +1,19 @@
+{
+  "name": "@lowcode/mock-data",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"TODO(P0-stub): mock-data lint is not configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"TODO(P0-stub): mock-data tests are not configured yet\""
+  },
+  "dependencies": {
+    "@lowcode/runtime-contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}

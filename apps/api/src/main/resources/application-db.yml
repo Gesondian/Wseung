@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${LOWCODE_DB_URL:jdbc:postgresql://localhost:5432/lowcode}
+    username: ${LOWCODE_DB_USERNAME:lowcode}
+    password: ${LOWCODE_DB_PASSWORD:lowcode}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: false

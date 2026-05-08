@@ -1,0 +1,19 @@
+{
+  "name": "lowcode-platform-p0",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
+  "scripts": {
+    "dev": "pnpm --filter @lowcode/web dev",
+    "dev:web": "pnpm --filter @lowcode/web dev",
+    "dev:api": "cd apps/api && mvn spring-boot:run",
+    "dev:infra": "docker compose -f infra/docker-compose.yml up -d",
+    "dev:down": "docker compose -f infra/docker-compose.yml down",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "generate:api-client": "bash scripts/generate-api-client.sh",
+    "check": "bash scripts/check.sh"
+  }
+}

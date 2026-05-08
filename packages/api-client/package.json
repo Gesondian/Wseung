@@ -1,0 +1,21 @@
+{
+  "name": "@lowcode/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "echo \"TODO(P0-stub): api-client lint is not configured yet\"",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"TODO(P0-stub): api-client tests are not configured yet\""
+  },
+  "dependencies": {
+    "@lowcode/mock-data": "workspace:*",
+    "@lowcode/runtime-contracts": "workspace:*",
+    "@lowcode/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}
